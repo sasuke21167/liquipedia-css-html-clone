@@ -1,0 +1,467 @@
+@use '../util' as *;
+@use '../globals' as *;
+
+.scroll{
+  scroll-behavior: smooth;
+}
+.wiki-nav{
+  display: flex;
+  justify-content: space-between;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid #dfdfdf;
+  font-size: rem(14);
+  padding: rem(15);
+  height: rem(36);
+  .nav-left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .nav-links{
+      padding: 0.5rem;
+      color: rgba(0,0,0,0.7);
+      cursor: pointer;
+      i{
+        font-weight: 400;
+        text-align: center;
+        width: 1.25rem;
+      }
+      span{
+        @include breakpoint-down(large){
+          display: none;
+        }
+      }
+    }
+  }
+  .nav-right{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 10px;
+    ul{
+      display: flex;
+      li{
+        position: relative;
+      }
+      .nav-links:hover{
+        color: rgba(0,0,0,0.7);
+      }
+      .nav-links:focus{
+        color: rgba(0,0,0,0.7);
+      }
+      .nav-links{
+        display: flex;
+        color: rgba(0,0,0,0.5);
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+
+        .icon-share{
+          i{
+            font-weight: 900;
+            text-align: center;
+            width: 1.25em;
+          }
+        }              
+      }
+      .share-drop{
+        display: none;
+      }
+      .share-drop.show{
+        position: absolute;
+        right: 0%;
+        left: auto;
+        top: calc(100% + 4px);
+        display: block;
+        z-index: 1000;
+        min-width: 200px;
+        max-height: calc(100vh - 43px - 50px - 0.125rem);
+        padding: 0.5rem 0;
+        margin: 0.125rem 0 0;
+        font-size: 1rem;
+        text-align: left;
+        list-style: none;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid rgba(0,0,0,0.15);
+        overflow-x: auto;
+        .drop-items{
+          color: var(--wiki-color-dark);
+          display: block;
+          width: 100%;
+          padding: 0.25rem 1.5rem;
+          clear: both;
+          font-weight: 400;
+          text-align: inherit;
+          white-space: nowrap;
+          background-color: transparent;
+          border: 0;
+          i{
+            display: inline-block;
+            text-align: center;
+            width: 1.25em;
+            font-weight: 400;
+            font-variant: normal;
+            text-rendering: auto;
+          }
+          span{                  
+            white-space: nowrap;
+            font-size: 1rem;
+            line-height: 1;
+          }
+        }
+      }
+      .menu-drop{
+        display: none;
+      }
+      .menu-drop.show{
+        position: absolute;
+        right: 0%;
+        left: auto;
+        top: calc(100% + 4px);
+        display: block;
+        z-index: 1000;
+        min-width: 200px;
+        max-height: calc(100vh - 43px - 50px - 0.125rem);
+        padding: 0.5rem 0;
+        margin: 0.125rem 0 0;
+        font-size: 1rem;
+        text-align: left;
+        list-style: none;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid rgba(0,0,0,0.15);
+        overflow-x: auto;
+        p{
+          padding: rem(3);
+          margin-left: rem(10);
+        }
+      }
+    }  
+  }
+}
+.wrap{
+  color: var(--wiki-color-dark);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  
+  .sidebar-column{
+    @include breakpoint-down(xlarge){
+      display: none;
+      width: 0;
+    }
+    width: rem(300);
+    min-height: rem(259);
+    display: block;
+    text-align: center;
+    margin: 7px 0 5px 0;
+    position: relative;
+    padding-bottom: 20px;
+  }
+
+  .content-column{
+    width: calc(100% - rem(320));
+    max-width: calc(100% - rem(320));
+
+    @include breakpoint-down(xlarge){
+      width: 100%;
+      max-width: 100%;
+    }
+    margin: 0 rem(10);
+    padding: 0 rem(10);
+    background-color: #ffffff;
+    .main-page-banner{
+      padding-top: rem(15);
+      font-weight: 500;
+      font-size: 260%;
+    }
+    .container {
+      &--fluid {
+        max-width: 100%;
+        display: flex;
+        flex-wrap:wrap;
+        justify-content: center;
+      }
+      &__row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: calc(100% + 10px);
+        margin-right: -5px;
+        margin-left: -5px;
+      }
+      @each $modifier , $breakpoint in $map-grid-props {
+        @include create-col-classes($modifier, $grid__cols, $breakpoint);
+      }
+      @each $modifier , $breakpoint in $map-grid-down-props {
+        @include create-order-classes($modifier, $order, $breakpoint);
+      }
+    }
+    
+      @at-root {
+        [class*='container__col-'] {
+          &.higher {
+            border: none;
+            padding: 0;
+          }
+          display: flex;
+          flex-wrap: wrap;
+          padding:5px;
+          width: 100%;
+          min-width: 50px;
+          min-height: 30px;           
+          justify-content: center;
+          .column-items{
+            display: block;
+            width: 100%;
+            border: 1px solid var(--wiki-color-focus-red);
+          }
+        }
+      }
+      .container {
+        background-color: #ffffff;
+        box-sizing: border-box;
+        &__row {   
+          .panel-body{
+            padding: 0;
+            width: 100%;
+            border: 1px solid var(--wiki-color-focus-red);
+            a{
+              color: #b12a2a;
+              background-color: #fbdfdf;
+              display: block;
+              padding: 10px 0;
+              font-size: 0.875rem;
+              font-weight: 700;
+              text-align: center;
+              line-height: 1.5;
+              i{
+                margin-bottom: 4px;
+                font-weight: 800;
+                display: block;
+                font-size: 3rem;
+                font-style: normal;
+                font-variant: normal;
+                text-rendering: auto;
+                line-height: 1;
+              }
+            }
+          }  
+          .container-md-content{
+            @include breakpoint-down(large){
+              display: contents;
+            } 
+            .column-items{
+              &-header{
+                font-size: 18px;
+                font-weight: bold;
+                padding: 5px 10px;
+                border-bottom-width: 1px;
+                border-bottom-style: solid;
+                color: var(--wiki-color-medium-red);
+                border-color: var(--wiki-color-focus-red);
+                background-color: var(--wiki-color-light-red);
+              }
+              .table{
+                width: 100%;
+                .wiki-table{
+                  width: 100%;
+                  border: 1px solid #bbbbbb;
+                  color: #202122;
+                  border-collapse: collapse;
+                  .header-row{
+                    background-color: #f5f5f5;
+                    .div-cell{
+                      display: table-cell;
+                      line-height: 1.5;
+                      text-align: center;
+                    }
+                    .header-sort{
+                      background-image: url(/images/arrow.svg);
+                      cursor: pointer;
+                      background-repeat: no-repeat;
+                      background-position: center right;
+                      padding-right: 21px;      
+
+                    }
+                  }                 
+                  .match{
+                    display: table-row;
+                    td{
+                      display: table-cell;
+                      line-height: 1.42857143;
+                      padding: 5px;
+                      text-align: center;
+                      vertical-align: middle;
+                    }
+                    .date{
+                      width: 30%;
+                    }
+                    .round{
+                      width: 15%;
+                    }
+                    .team-left{
+                      width: 20%;
+                      text-align: right;
+                      span{
+                        width: 60px;
+                        height: 25px;
+                        display: inline-block;
+                        text-align: center;
+                        img{
+                          max-width: 50px;
+                          max-height: 25px;
+                          width: auto;
+                          height: auto;
+                        }
+                      }
+                    }
+                    .score{
+                      width: 15%;
+                    }
+                    .team-right{
+                      width: 20%;
+                      span{
+                        width: 60px;
+                        height: 25px;
+                        display: inline-block;
+                        text-align: center;
+                        img{
+                          max-width: 50px;
+                          max-height: 25px;
+                          width: auto;
+                          height: auto;                          
+                        }
+                      }
+                    }
+                  }
+                  .background-color{
+                    background-color: var(--wiki-color-light-gray);
+                  }
+                }
+              }
+              .table-match{
+                border: 1px solid #bbbbbb;
+                border-left: 0;
+                border-right: 0;
+                
+                .team-left{
+                  width: 48%;
+                  padding: 5px;
+                  vertical-align: middle;
+                  text-align: right;
+                  color: #426ccf;   
+                  img{
+                    display: inline-block;
+                    max-width: 50px;
+                    max-height: 25px;
+                    width: auto;
+                    height: auto;                   
+                  }           
+                }
+                .sersus{
+                  text-align: center;
+                  width: 4%;
+                  padding: 0px 5px;
+                  font-size: 14px;
+                }
+                .team-right{
+                  width: 48%;
+                  padding: 5px;
+                  vertical-align: middle;
+                  text-align: left;
+                  color: #426ccf; 
+                  span{
+                    width: 60px;
+                    height: 25px;
+                    display: inline-block;
+                    text-align: center;
+                  }
+                  img{
+                    display: inline-block;
+                    max-width: 50px;
+                    max-height: 25px;
+                    width: auto;
+                    height: auto;                   
+                  }       
+                }
+                .match-filler{
+                  padding: 5px;
+                  background-color: var(--wiki-color-light-gray);
+                  border: 1px solid #bbbbbb;                
+                  vertical-align: middle;
+                  .time-countdown{
+                  text-align: center;  
+                  font-size: 12px;   
+                  }
+                  .name{
+                    float: right;
+                    min-width: 175px;
+                    max-width: 185px;
+                    white-space: nowrap;
+                    line-height: 2;
+                    text-align: left;
+                    font-size: 11px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                  }
+                  img{
+                    float: right;
+                    max-width: 25px;
+                    max-height: 25px;
+                    width: auto;
+                    height: auto;
+                  }                 
+                }
+              }
+              .tournament-list{
+                &-heading{
+                  padding: 5px;
+                  text-align: center;
+                  font-size: 150%;
+                  font-weight: bold;
+                  display: block;
+                  background-color: #f5f5f5;
+                  border-top: 1px solid #bbbbbb;
+                  border-bottom: 1px solid #bbbbbb;
+                }
+                &-type-list{
+                  margin: 0.3em 0 0 0.3em;
+                  a{
+                    color: #426ccf;
+                  }
+                  img{
+                    display: inline-block;
+                    width: rem(21);
+                    height: rem(21);
+                  }
+                  .tournament-name{
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    width: calc(100% - 160px);
+                    display: inline-block;
+                    font-size: 14px;
+                    margin-bottom: -5px;
+                    padding-left: 3px;
+                    position: relative;
+                    line-height: 21px;
+                  }
+                  .tournament-date{
+                    padding-right: 10px;
+                    line-height: 21px;
+                    font-size: 14px;
+                    
+                  }
+                }
+              }
+              
+            }
+          }     
+        }
+    }
+  }
+}
+.footer{
+  height: 100vh;
+}

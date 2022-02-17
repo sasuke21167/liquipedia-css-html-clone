@@ -1,0 +1,79 @@
+// 576px, 764px, 992px, 1320px, 1620px
+$breakpoints-up: (
+	'small':'35.4375em',
+	'medium': '47.75em',
+	'large': '62em',
+	'xlarge': '82.5em',
+	'fluid': '101.25em',
+);
+
+// 575px, 763px, 991px, 1319px, 1619px
+$breakpoints-down: (
+	'small': '35.9375em',
+	'medium': '47.6875em',
+	'large': '61.9375em',
+	'xlarge':'82.4375em',
+	'fluid':'101.1875em',
+);
+
+@mixin breakpoint($size) {
+	@media (min-width: map-get($breakpoints-up, $size)) {
+		@content;
+	}
+}
+
+@mixin breakpoint-down($size) {
+	@media (max-width: map-get($breakpoints-down, $size)) {
+		@content;
+	}
+}
+$grid-bp-xsm:35.4375em;
+$grid__bp-md:62em;
+$grid__bp-lg:82.5em;
+$grid__bp-xl:101.25em;
+$grid__cols: 12;
+$order:6;
+
+$map-grid-props: ('-sm': 0, '-xsm': $grid-bp-xsm, '-md': $grid__bp-md, '-lg': $grid__bp-lg, '-xl': $grid__bp-xl);
+$map-grid-down-props: ('-fl': 100%, '-xl': ($grid__bp-xl - 0.0625em), '-lg': ($grid__bp-lg - 0.0625em), '-md': ($grid__bp-md - 0.0625em));
+@mixin create-mq($breakpoint) {
+  @if($breakpoint == 0) {
+    @content;
+  } @else {
+    @media screen and (min-width: $breakpoint) {
+      @content;
+    }
+  }
+}
+
+@mixin create-mq-down($breakpoint) {
+  @if($breakpoint == 100%) {
+    @content;
+  } @else {
+    @media screen and (max-width: $breakpoint) {
+      @content;
+    }
+  }
+}
+
+@mixin create-col-classes($modifier, $grid-cols, $breakpoint) {
+  @include create-mq($breakpoint) {
+    @for $i from 1 through $grid-cols {
+      &__col#{$modifier}-#{$i} {
+        flex-basis: (100 / ($grid-cols / $i) ) * 1%;
+      }
+    }
+  }
+}
+
+@mixin create-order-classes($modifier, $order, $breakpoint) {
+  @include create-mq-down($breakpoint) {
+    @for $i from 1 through $order {
+      &#{$modifier}-order-#{$i} {
+        order: $i;
+      }
+    }
+  }
+}
+
+
