@@ -49,6 +49,20 @@ const toggleElement = (i) => {
     }
   } 
 }
+
+function eventClick  {
+  e.preventDefault();
+  console.log(e.target);
+
+  if((div.style.display === '' || div.style.display === 'none') && (e.target === button || e.target === itag)) {
+    div.style.display = 'block';    
+  } else if((div.style.display === '' || div.style.display === 'none') && (e.target !== button || e.target !== itag)) {
+    div.style.display = 'none';
+  } else {
+    div.style.display = 'none';
+  }
+}
+
 //add event
 
 Object.keys(dropToggle).forEach(function (i) {
