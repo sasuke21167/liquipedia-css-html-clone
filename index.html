@@ -1,563 +1,711 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700;800&display=swap" rel="stylesheet"> 
-  <link rel="stylesheet" href="dist/style.css">
-  <script src="https://use.fontawesome.com/be77b58197.js"></script>
-  <script defer src="/dist/script.js"></script>
-  <title>liquipedia</title>
-</head>
-<body>
-  <div class="header">
-    <nav class="main-nav-fluid">
-      <div class="main-nav header-container">
-        <a class="main-nav__brand" href="#" title="main page">
-          <img src="images/brand-logo.png" alt="">
-        </a>
-        <ul class="main-nav__navbar">
-          <li id="drop-toggle" class="nav-item">
-            <p class="brand-desktop dropdown-toggle">liquipedia</p>
-            <p class="brand-subtitle">Dota2</p>
-          </li>
-          <div  class="brand-menu">
-            <div class="wiki-menu">
-              <div class="wiki-menu-tab">
-                <a href="#" class="wiki-menu-tab__item">
-                  <i class="fa fa-puzzle-piece" aria-hidden="true"></i>
-                  <span>main wikis</span>
-                  <i class="fa fa-star-o" aria-hidden="true"></i>
-                </a>
-                <a href="#" class="wiki-menu-tab__item">
-                  <i class="fa fa-angellist" aria-hidden="true"></i>
-                  <span>alpha wikis</span>
-                  <i class="fa fa-star-o" aria-hidden="true"></i>
-                </a>          
-              </div>             
-              <div class="wiki-menu-content">
-                <a class="wiki-menu-content__item" href="#">
-                  <i class="fa fa-gamepad" aria-hidden="true"></i>
-                  <span>dota2</span>
-                  <i class="fa fa-star-o" aria-hidden="true"></i>
-                </a>
-                <a class="wiki-menu-content__item" href="#">
-                  <i class="fa fa-gamepad" aria-hidden="true"></i>
-                  <span>Counter-Strike</span>
-                  <i class="fa fa-star-o" aria-hidden="true"></i>
-                </a>
-                <a class="wiki-menu-content__item" href="#">
-                  <i class="fa fa-gamepad" aria-hidden="true"></i>
-                  <span>Valorant</span>
-                  <i class="fa fa-star-o" aria-hidden="true"></i>
-                </a>
-                <a class="wiki-menu-content__item" href="#">
-                  <i class="fa fa-gamepad" aria-hidden="true"></i>
-                  <span>PUBG</span>
-                  <i class="fa fa-star-o" aria-hidden="true"></i>
-                </a>
-                <a class="wiki-menu-content__item" href="#">
-                  <i class="fa fa-gamepad" aria-hidden="true"></i>
-                  <span>Rocket League</span>
-                  <i class="fa fa-star-o" aria-hidden="true"></i>
-                </a>
-                <a class="wiki-menu-content__item" href="#">
-                  <i class="fa fa-gamepad" aria-hidden="true"></i>
-                  <span>StarCraft II</span>
-                  <i class="fa fa-star-o" aria-hidden="true"></i>
-                </a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="dist/style.css" />
+    <script src="https://use.fontawesome.com/be77b58197.js"></script>
+    <script defer src="/dist/script.js" type="text/javascript"></script>
+    <title>liquipedia</title>
+  </head>
+  <body>
+    <div class="header">
+      <nav class="main-nav-fluid">
+        <div class="main-nav header-container">
+          <a class="main-nav__brand" href="#" title="main page">
+            <img src="images/brand-logo.png" alt="" />
+          </a>
+          <ul class="main-nav__navbar">
+            <li id="drop-toggle" class="nav-item">
+              <p class="brand-desktop dropdown-toggle">liquipedia</p>
+              <p class="brand-subtitle">Dota2</p>
+            </li>
+            <div class="brand-menu">
+              <div class="wiki-menu">
+                <div class="wiki-menu-tab">
+                  <a href="#" class="wiki-menu-tab__item">
+                    <i class="fa fa-puzzle-piece" aria-hidden="true"></i>
+                    <span>main wikis</span>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                  </a>
+                  <a href="#" class="wiki-menu-tab__item">
+                    <i class="fa fa-angellist" aria-hidden="true"></i>
+                    <span>alpha wikis</span>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                  </a>
+                </div>
+                <div class="wiki-menu-content">
+                  <a class="wiki-menu-content__item" href="#">
+                    <i class="fa fa-gamepad" aria-hidden="true"></i>
+                    <span>dota2</span>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                  </a>
+                  <a class="wiki-menu-content__item" href="#">
+                    <i class="fa fa-gamepad" aria-hidden="true"></i>
+                    <span>Counter-Strike</span>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                  </a>
+                  <a class="wiki-menu-content__item" href="#">
+                    <i class="fa fa-gamepad" aria-hidden="true"></i>
+                    <span>Valorant</span>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                  </a>
+                  <a class="wiki-menu-content__item" href="#">
+                    <i class="fa fa-gamepad" aria-hidden="true"></i>
+                    <span>PUBG</span>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                  </a>
+                  <a class="wiki-menu-content__item" href="#">
+                    <i class="fa fa-gamepad" aria-hidden="true"></i>
+                    <span>Rocket League</span>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                  </a>
+                  <a class="wiki-menu-content__item" href="#">
+                    <i class="fa fa-gamepad" aria-hidden="true"></i>
+                    <span>StarCraft II</span>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                  </a>
+                </div>
               </div>
             </div>
+          </ul>
+          <div class="main-nav__collapse">
+            <ul class="navbar">
+              <li class="nav-items">
+                <div id="drop-toggle" class="nav-item dropdown-toggle">
+                  <i class="fa fa-line-chart" aria-hidden="true"></i>
+                  <span>Trendding</span>
+                </div>
+                <div class="nav-drop-trending">
+                  <a href="#" class="drop-item">
+                    <p>The International 10</p>
+                  </a>
+                  <a href="#" class="drop-item">
+                    <p>The International 10: Main Event</p>
+                  </a>
+                  <a href="#" class="drop-item">
+                    <p>The International 10:Group Stage</p>
+                  </a>
+                  <a href="#" class="drop-item">
+                    <p>The International 10: Statistics</p>
+                  </a>
+                </div>
+              </li>
+              <li class="nav-items">
+                <div id="drop-toggle" class="nav-item dropdown-toggle">
+                  <i class="fa fa-trophy" aria-hidden="true"></i>
+                  <span>Tournements</span>
+                </div>
+                <div class="nav-drop-tournament">
+                  <div class="col-sm-4">
+                    <ul>
+                      <li class="dropdown-header">Upcoming</li>
+                    </ul>
+                  </div>
+                  <div class="col-sm-4">
+                    <ul>
+                      <li class="dropdown-header">Ongoing</li>
+                      <li>
+                        <a class="dropdown-item" href="#">
+                          <img src="/images/TheInternationalSmall.png" alt="" />
+                          <span> The International 10</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">
+                          <img src="/images/TheInternationalSmall.png" alt="" />
+                          <span> The International 10</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">
+                          <img src="/images/TheInternationalSmall.png" alt="" />
+                          <span> The International 10 test long char</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-sm-4">
+                    <ul>
+                      <li class="dropdown-header">Completed</li>
+                      <li>
+                        <a class="dropdown-item" href="#">
+                          <img src="/images/TheInternationalSmall.png" alt="" />
+                          <span> The International 10</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">
+                          <img src="/images/TheInternationalSmall.png" alt="" />
+                          <span> The International 10</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">
+                          <img src="/images/TheInternationalSmall.png" alt="" />
+                          <span> The International 10</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">
+                          <img src="/images/TheInternationalSmall.png" alt="" />
+                          <span> The International 10</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-items">
+                <div id="drop-toggle" class="nav-item dropdown-toggle">
+                  <i class="fa fa-puzzle-piece" aria-hidden="true"></i>
+                  <span>Contribute</span>
+                </div>
+                <div class="nav-drop-contribute">
+                  <a href="#">Edit an Article</a>
+                  <a href="#">Create an Article</a>
+                  <a href="#">Help Portal</a>
+                  <a href="#">Notability Guidelines</a>
+                  <a href="#">Chat With Us</a>
+                  <a href="#">Feedback Thread</a>
+                </div>
+              </li>
+            </ul>
           </div>
-        </ul>
-        <div class="main-nav__collapse">
-          <ul class="navbar">
-            <li class="nav-items">
-              <div id="drop-toggle" class="nav-item dropdown-toggle">
-                <i class="fa fa-line-chart" aria-hidden="true"></i>
-                <span>Trendding</span>
-              </div>
-              <div class="nav-drop-trending">
-                <a href="#" class="drop-item">
-                  <p>The International 10</p>
+          <form action="" class="main-nav__search-form" role="search">
+            <div class="input-group">
+              <input type="text" class="search-input" placeholder="Search" />
+              <button class="btn">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </div>
+          </form>
+          <ul class="main-nav__nav-right">
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fa fa-user-plus" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fa fa-sign-in" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="scroll">
+      <div class="wiki-nav header-container">
+        <div class="nav-left">
+          <a href="#" class="nav-links" title="View the content page">
+            <i class="fa fa-file-text-o" aria-hidden="true"></i>
+            <span>Page</span>
+          </a>
+          <a
+            href="#"
+            class="nav-links"
+            title="Discussion about the content page"
+          >
+            <i class="fa fa-comments-o" aria-hidden="true"></i>
+            <span>Talk</span>
+          </a>
+          <a
+            href="#"
+            class="nav-links"
+            title="This page is protected.&#10;You can view its source"
+          >
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+            <span>Edit</span>
+          </a>
+          <a href="#" class="nav-links" title="Past revisions of this page">
+            <i class="fa fa-history" aria-hidden="true"></i>
+            <span>History</span>
+          </a>
+        </div>
+        <div class="nav-right">
+          <ul>
+            <li>
+              <a id="drop-toggle" href="#" class="nav-links">
+                <span class="icon-share dropdown-toggle">
+                  <i class="fa fa-share-alt" aria-hidden="true"></i>
+                </span>
+              </a>
+              <div class="share-drop">
+                <a href="#" class="drop-items">
+                  <i class="fa fa-twitter" aria-hidden="true"></i>
+                  <span>Twitter</span>
                 </a>
-                <a href="#" class="drop-item">
-                  <p>The International 10: Main Event</p>
+                <a href="#" class="drop-items">
+                  <i class="fa fa-facebook" aria-hidden="true"></i>
+                  <span>Facebook</span>
                 </a>
-                <a href="#" class="drop-item">
-                  <p>The International 10:Group Stage</p>
+                <a href="#" class="drop-items">
+                  <i class="fa fa-reddit-alien" aria-hidden="true"></i>
+                  <span>Reddit</span>
                 </a>
-                <a href="#" class="drop-item">
-                  <p>The International 10: Statistics</p>
+                <a href="#" class="drop-items">
+                  <i class="fa fa-vk" aria-hidden="true"></i>
+                  <span>VK</span>
                 </a>
               </div>
             </li>
-            <li class="nav-items">
-              <div id="drop-toggle" class="nav-item dropdown-toggle">
-                <i class="fa fa-trophy" aria-hidden="true"></i>
-                <span>Tournements</span>
-              </div>
-              <div class="nav-drop-tournament">
-                <div class="col-sm-4">
-                  <ul>
-                    <li class="dropdown-header">Upcoming</li>
-                  </ul>
-                </div>
-                <div class="col-sm-4">
-                  <ul>
-                    <li class="dropdown-header">Ongoing</li>
-                    <li><a class="dropdown-item" href="#">
-                      <img src="/images/TheInternationalSmall.png" alt="">
-                      <span> The International 10</span>            
-                    </a></li>
-                    <li><a class="dropdown-item" href="#">
-                      <img src="/images/TheInternationalSmall.png" alt="">
-                      <span> The International 10</span>            
-                    </a></li>
-                    <li><a class="dropdown-item" href="#">
-                      <img src="/images/TheInternationalSmall.png" alt="">
-                      <span> The International 10 test long char</span>            
-                    </a></li>
-                  </ul>
-                </div>
-                <div class="col-sm-4">
-                  <ul>
-                    <li class="dropdown-header">Completed</li>
-                    <li><a class="dropdown-item" href="#">
-                      <img src="/images/TheInternationalSmall.png" alt="">
-                      <span> The International 10</span>            
-                    </a></li>
-                    <li><a class="dropdown-item" href="#">
-                      <img src="/images/TheInternationalSmall.png" alt="">
-                      <span> The International 10</span>            
-                    </a></li>
-                    <li><a class="dropdown-item" href="#">
-                      <img src="/images/TheInternationalSmall.png" alt="">
-                      <span> The International 10</span>            
-                    </a></li>
-                    <li><a class="dropdown-item" href="#">
-                      <img src="/images/TheInternationalSmall.png" alt="">
-                      <span> The International 10</span>            
-                    </a></li>
-                  </ul>
-                </div>
-              </div>
-            </li>
-            <li class="nav-items">
-              <div id="drop-toggle" class="nav-item dropdown-toggle">
-                <i class="fa fa-puzzle-piece" aria-hidden="true"></i>
-                <span>Contribute</span>
-              </div>
-              <div class="nav-drop-contribute">
-                <a href="#">Edit an Article</a>
-                <a href="#">Create an Article</a>
-                <a href="#">Help Portal</a>
-                <a href="#">Notability Guidelines</a>
-                <a href="#">Chat With Us</a>
-                <a href="#">Feedback Thread</a>
+            <li class="nav-links">
+              <a id="drop-toggle" href="#" class="nav-links">
+                <span class="icon-repair dropdown-toggle">
+                  <i class="fa fa-wrench" aria-hidden="true"></i>
+                </span>
+              </a>
+              <div class="menu-drop">
+                <p>Recent changes</p>
+                <p>Pending changes</p>
+                <p>Random page</p>
               </div>
             </li>
           </ul>
         </div>
-        <form action="" class="main-nav__search-form" role="search">
-          <div class="input-group">
-            <input type="text" class="search-input" placeholder="Search">
-            <button class="btn">
-              <i class="fa fa-search" aria-hidden="true"></i>
-            </button>          
-          </div>
-        </form>
-        <ul class="main-nav__nav-right">
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="fa fa-user-plus" aria-hidden="true"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="fa fa-sign-in" aria-hidden="true"></i>
-            </a>
-          </li>
-        </ul>
-      </div>     
-    </nav>
-  </div>
-  <div class="scroll">
-    <div class="wiki-nav header-container">
-      <div class="nav-left">
-        <a href="#" class="nav-links" title="View the content page" >
-          <i class="fa fa-file-text-o" aria-hidden="true"></i>
-          <span>Page</span>
-        </a>
-        <a href="#" class="nav-links" title="Discussion about the content page">
-          <i class="fa fa-comments-o" aria-hidden="true"></i>
-          <span>Talk</span>
-        </a>
-        <a href="#" class="nav-links" title="This page is protected.&#10;You can view its source">
-          <i class="fa fa-pencil" aria-hidden="true"></i>
-          <span>Edit</span>
-        </a>
-        <a href="#" class="nav-links" title="Past revisions of this page">
-          <i class="fa fa-history" aria-hidden="true"></i>
-          <span>History</span>
-        </a>
       </div>
-      <div class="nav-right">
-        <ul>
-          <li>
-            <a id="drop-toggle" href="#"  class="nav-links">
-            <span class="icon-share dropdown-toggle">
-              <i class="fa fa-share-alt" aria-hidden="true"></i>
-            </span>   
-          </a>
-          <div class="share-drop ">
-            <a href="#" class="drop-items">
-              <i class="fa fa-twitter" aria-hidden="true"></i>
-              <span>Twitter</span>
-            </a>
-            <a href="#" class="drop-items">
-              <i class="fa fa-facebook" aria-hidden="true"></i>
-              <span>Facebook</span>
-            </a>
-            <a href="#" class="drop-items">
-              <i class="fa fa-reddit-alien" aria-hidden="true"></i>
-              <span>Reddit</span>        
-            </a>
-            <a href="#" class="drop-items">
-              <i class="fa fa-vk" aria-hidden="true"></i>
-              <span>VK</span>             
-            </a>
-          </div>
-          </li>
-          <li class="nav-links">
-            <a id="drop-toggle" href="#"  class="nav-links">
-              <span class="icon-repair dropdown-toggle">
-                <i class="fa fa-wrench" aria-hidden="true"></i>
-              </span>
-            </a>
-            <div class="menu-drop">
-                <p>Recent changes</p>
-                <p>Pending changes</p>
-                <p>Random page</p>
+      <div class="wrap">
+        <div class="sidebar-column"></div>
+        <div class="content-column">
+          <div id="siteNotice"></div>
+          <div class="body-content">
+            <div class="main-page-banner">
+              <h1>Welcome to<b> liquipedia</b></h1>
+              <h2>The Dota 2 encyclopedia that <b>you</b> can edit</h2>
             </div>
-          </li>
-        </ul> 
-      </div>
-    </div>
-    <div class="wrap">   
-      <div class="sidebar-column">
-  
-      </div>
-      <div class="content-column">
-        <div id="siteNotice"></div>
-        <div class="body-content">
-          <div class="main-page-banner">
-            <h1>Welcome to<b> liquipedia</b></h1>
-            <h2>The Dota 2 encyclopedia that <b>you</b> can edit</h2>
-          </div>      
-          <div class="content">
-            <div class="container--fluid">
-              <div class="container__row">
-                <div class="container__col-sm-4 container__col-xsm-2">
-                  <div class="panel-body">
-                    <a href="#">
-                      <i class="fa fa-user" aria-hidden="true"></i>
-                      Players
-                    </a>
+            <div class="content">
+              <div class="container--fluid">
+                <div class="container__row">
+                  <div class="container__col-sm-4 container__col-xsm-2">
+                    <div class="panel-body">
+                      <a href="#">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        Players
+                      </a>
+                    </div>
                   </div>
-                </div>
-                <div class="container__col-sm-4 container__col-xsm-2">
-                  <div class="panel-body">
-                    <a href="#">
-                      <i class="fa fa-users" aria-hidden="true"></i>
-                      Teams
-                    </a>
+                  <div class="container__col-sm-4 container__col-xsm-2">
+                    <div class="panel-body">
+                      <a href="#">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                        Teams
+                      </a>
+                    </div>
                   </div>
-                </div>
-                <div class="container__col-sm-4 container__col-xsm-2">
-                  <div class="panel-body">
-                    <a href="#">
-                      <i class="fa fa-trophy" aria-hidden="true"></i>
-                      Tournament
-                    </a>
+                  <div class="container__col-sm-4 container__col-xsm-2">
+                    <div class="panel-body">
+                      <a href="#">
+                        <i class="fa fa-trophy" aria-hidden="true"></i>
+                        Tournament
+                      </a>
+                    </div>
                   </div>
-                </div>
-                <div class="container__col-sm-4 container__col-xsm-2">
-                  <div class="panel-body">
-                    <a href="#">
-                      <i class="fa fa-handshake-o" aria-hidden="true"></i>
-                      Transfers
-                    </a>
+                  <div class="container__col-sm-4 container__col-xsm-2">
+                    <div class="panel-body">
+                      <a href="#">
+                        <i class="fa fa-handshake-o" aria-hidden="true"></i>
+                        Transfers
+                      </a>
+                    </div>
                   </div>
-                </div>
-                <div class="container__col-sm-4 container__col-xsm-2">
-                  <div class="panel-body">
-                    <a href="#">
-                      <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                      Statistics
-                    </a>
+                  <div class="container__col-sm-4 container__col-xsm-2">
+                    <div class="panel-body">
+                      <a href="#">
+                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                        Statistics
+                      </a>
+                    </div>
                   </div>
-                </div>
-                <div class="container__col-sm-4 container__col-xsm-2">
-                  <div class="panel-body">
-                    <a href="#">
-                      <i class="fa fa-minus-square" aria-hidden="true"></i>
-                      Patches
-                    </a>
+                  <div class="container__col-sm-4 container__col-xsm-2">
+                    <div class="panel-body">
+                      <a href="#">
+                        <i class="fa fa-minus-square" aria-hidden="true"></i>
+                        Patches
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="container--fluid">
-              <div class="container__row">
-                <div class="container__col-sm-12 container__col-md-6 container-md-content higher">
-                  <div class="container__col-sm-12 container__col-md-12 container-md-order-2"> 
-                    <div class="ti10 column-items">
-                      <div class="column-items-header">
-                        <span>The International 10</span>
+              <div class="container--fluid">
+                <div class="container__row">
+                  <div
+                    class="container__col-sm-12 container__col-md-6 container-md-content higher"
+                  >
+                    <div
+                      class="container__col-sm-12 container__col-md-12 container-md-order-2"
+                    >
+                      <div class="ti10 column-items">
+                        <div class="column-items-header">
+                          <span>The International 10</span>
+                        </div>
+                        <div class="table">
+                          <table class="wiki-table">
+                            <thead>
+                              <tr class="header-row">
+                                <th class="div-cell header-sort">Date</th>
+                                <th class="div-cell unsort">Round</th>
+                                <th class="div-cell header-sort">Team</th>
+                                <th class="div-cell header-sort">Score</th>
+                                <th class="div-cell header-sort">Vs Team</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr class="match">
+                                <td class="date">
+                                  <span>October 12, 2021 - 14:55 </span>
+                                </td>
+                                <td class="round">UB R1</td>
+                                <td class="team-left">
+                                  T1
+                                  <span
+                                    ><img
+                                      src="images/100px-T1_2019_allmode.png"
+                                      alt=""
+                                  /></span>
+                                </td>
+                                <td class="score"><b>2</b>:<b>1</b></td>
+                                <td class="team-right">
+                                  <span
+                                    ><img
+                                      src="images/45px-Alliance_2016_allmode.png"
+                                      alt=""
+                                  /></span>
+                                  [A]
+                                </td>
+                              </tr>
+                              <tr class="match background-color">
+                                <td class="date">
+                                  <span>October 12, 2021 - 14:55 </span>
+                                </td>
+                                <td class="round">UB R1</td>
+                                <td class="team-left">
+                                  T1
+                                  <span
+                                    ><img
+                                      src="images/100px-T1_2019_allmode.png"
+                                      alt=""
+                                  /></span>
+                                </td>
+                                <td class="score"><b>2</b>:<b>1</b></td>
+                                <td class="team-right">
+                                  <span
+                                    ><img
+                                      src="images/45px-Alliance_2016_allmode.png"
+                                      alt=""
+                                  /></span>
+                                  [A]
+                                </td>
+                              </tr>
+                              <tr class="match">
+                                <td class="date">
+                                  <span>October 12, 2021 - 14:55 </span>
+                                </td>
+                                <td class="round">UB R1</td>
+                                <td class="team-left">
+                                  T1
+                                  <span
+                                    ><img
+                                      src="images/100px-T1_2019_allmode.png"
+                                      alt=""
+                                  /></span>
+                                </td>
+                                <td class="score"><b>2</b>:<b>1</b></td>
+                                <td class="team-right">
+                                  <span
+                                    ><img
+                                      src="images/45px-Alliance_2016_allmode.png"
+                                      alt=""
+                                  /></span>
+                                  [A]
+                                </td>
+                              </tr>
+                              <tr class="match background-color">
+                                <td class="date">
+                                  <span>October 12, 2021 - 14:55 </span>
+                                </td>
+                                <td class="round">UB R1</td>
+                                <td class="team-left">
+                                  T1
+                                  <span
+                                    ><img
+                                      src="images/100px-T1_2019_allmode.png"
+                                      alt=""
+                                  /></span>
+                                </td>
+                                <td class="score"><b>2</b>:<b>1</b></td>
+                                <td class="team-right">
+                                  <span
+                                    ><img
+                                      src="images/45px-Alliance_2016_allmode.png"
+                                      alt=""
+                                  /></span>
+                                  [A]
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
                       </div>
-                      <div class="table">
-                        <table class="wiki-table">
-                          <thead>
-                            <tr class="header-row">
-                              <th class="div-cell header-sort">Date</th>
-                              <th class="div-cell unsort">Round</th>
-                              <th class="div-cell header-sort">Team</th>
-                              <th class="div-cell header-sort">Score</th>
-                              <th class="div-cell header-sort">Vs Team</th>
-                            </tr>
-                          </thead>
+                    </div>
+                    <div
+                      class="container__col-sm-12 container__col-md-12 container-md-order-4"
+                    >
+                      <div class="panel-box column-items">box</div>
+                    </div>
+                  </div>
+                  <div
+                    class="container__col-sm-12 container__col-md-6 container-md-content higher"
+                  >
+                    <div
+                      class="container__col-sm-12 container__col-md-12 container__col-lg-12 container__col-xl-6 container-md-order-3"
+                    >
+                      <div class="update-match column-items">
+                        <div class="column-items-header">
+                          <span>Upcoming Match</span>
+                        </div>
+                        <table class="table-match">
                           <tbody>
-                            <tr class="match">
-                              <td class="date"><span>October 12, 2021 - 14:55 </span></td>
-                              <td class="round">UB R1</td>
+                            <tr>
                               <td class="team-left">
-                                T1 
-                                <span><img src="images/100px-T1_2019_allmode.png" alt=""></span>                   
+                                T1
+                                <span>
+                                  <img
+                                    src="images/100px-T1_2019_allmode.png"
+                                    alt=""
+                                  />
+                                </span>
                               </td>
-                              <td class="score"><b>2</b>:<b>1</b></td>
+                              <td class="sersus">
+                                <p>vs</p>
+                                <p>(Bo3)</p>
+                              </td>
                               <td class="team-right">
-                                <span><img src="images/45px-Alliance_2016_allmode.png" alt=""></span>
+                                <span>
+                                  <img
+                                    src="images/45px-Alliance_2016_allmode.png"
+                                    alt=""
+                                  />
+                                </span>
                                 [A]
                               </td>
                             </tr>
-                            <tr class="match background-color">
-                              <td class="date"><span>October 12, 2021 - 14:55 </span></td>
-                              <td class="round">UB R1</td>
-                              <td class="team-left">
-                                T1 
-                                <span><img src="images/100px-T1_2019_allmode.png" alt=""></span>                   
-                              </td>
-                              <td class="score"><b>2</b>:<b>1</b></td>
-                              <td class="team-right">
-                                <span><img src="images/45px-Alliance_2016_allmode.png" alt=""></span>
-                                [A]
-                              </td>
-                            </tr>
-                            <tr class="match">
-                              <td class="date"><span>October 12, 2021 - 14:55 </span></td>
-                              <td class="round">UB R1</td>
-                              <td class="team-left">
-                                T1 
-                                <span><img src="images/100px-T1_2019_allmode.png" alt=""></span>                   
-                              </td>
-                              <td class="score"><b>2</b>:<b>1</b></td>
-                              <td class="team-right">
-                                <span><img src="images/45px-Alliance_2016_allmode.png" alt=""></span>
-                                [A]
-                              </td>
-                            </tr>
-                            <tr class="match background-color">
-                              <td class="date"><span>October 12, 2021 - 14:55 </span></td>
-                              <td class="round">UB R1</td>
-                              <td class="team-left">
-                                T1 
-                                <span><img src="images/100px-T1_2019_allmode.png" alt=""></span>                   
-                              </td>
-                              <td class="score"><b>2</b>:<b>1</b></td>
-                              <td class="team-right">
-                                <span><img src="images/45px-Alliance_2016_allmode.png" alt=""></span>
-                                [A]
+                            <tr>
+                              <td class="match-filler" colspan="3">
+                                <span class="time-countdown">3h35m00s</span>
+                                <span class="name">
+                                  The International 10
+                                  <img
+                                    src="images/TheInternationalSmall.png"
+                                    alt=""
+                                  />
+                                </span>
                               </td>
                             </tr>
                           </tbody>
                         </table>
-                      </div>                  
-                    </div>
-                  </div>
-                  <div class="container__col-sm-12 container__col-md-12 container-md-order-4">
-                    <div class="panel-box column-items">
-                      box
-                    </div>
-                  </div>
-                </div>
-                <div class="container__col-sm-12 container__col-md-6 container-md-content higher">
-                  <div class="container__col-sm-12 container__col-md-12 container__col-lg-12 container__col-xl-6 container-md-order-3">
-                    <div class="update-match column-items">
-                      <div class="column-items-header">
-                        <span>Upcoming Match</span>
+                        <table class="table-match">
+                          <tbody>
+                            <tr>
+                              <td class="team-left">
+                                T1
+                                <span>
+                                  <img
+                                    src="images/100px-T1_2019_allmode.png"
+                                    alt=""
+                                  />
+                                </span>
+                              </td>
+                              <td class="sersus">
+                                <p>vs</p>
+                                <p>(Bo3)</p>
+                              </td>
+                              <td class="team-right">
+                                <span>
+                                  <img
+                                    src="images/45px-Alliance_2016_allmode.png"
+                                    alt=""
+                                  />
+                                </span>
+                                [A]
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="match-filler" colspan="3">
+                                <span class="time-countdown">3h35m00s</span>
+                                <span class="name">
+                                  The International 10
+                                  <img
+                                    src="images/TheInternationalSmall.png"
+                                    alt=""
+                                  />
+                                </span>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <table class="table-match">
+                          <tbody>
+                            <tr>
+                              <td class="team-left">
+                                T1
+                                <span>
+                                  <img
+                                    src="images/100px-T1_2019_allmode.png"
+                                    alt=""
+                                  />
+                                </span>
+                              </td>
+                              <td class="sersus">
+                                <p>vs</p>
+                                <p>(Bo3)</p>
+                              </td>
+                              <td class="team-right">
+                                <span>
+                                  <img
+                                    src="images/45px-Alliance_2016_allmode.png"
+                                    alt=""
+                                  />
+                                </span>
+                                [A]
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="match-filler" colspan="3">
+                                <span class="time-countdown">3h35m00s</span>
+                                <span class="name">
+                                  The International 10
+                                  <img
+                                    src="images/TheInternationalSmall.png"
+                                    alt=""
+                                  />
+                                </span>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
-                      <table class="table-match">
-                        <tbody>
-                          <tr>
-                            <td class="team-left">
-                              T1
-                              <span>
-                                <img src="images/100px-T1_2019_allmode.png" alt="">
-                              </span>                          
-                            </td>
-                            <td class="sersus">
-                              <p>vs</p>
-                              <p>(Bo3)</p>
-                            </td>
-                            <td class="team-right">
-                              <span>
-                                <img src="images/45px-Alliance_2016_allmode.png" alt="">
-                              </span>                           
-                              [A]
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="match-filler" colspan="3">
-                              <span class="time-countdown">3h35m00s</span>
-                              <span class="name">
-                                The International 10
-                                <img src="images/TheInternationalSmall.png"alt="">
-                              </span>
-                            </td>                       
-                          </tr>
-                        </tbody>
-                      </table>
-                      <table class="table-match">
-                        <tbody>
-                          <tr>
-                            <td class="team-left">
-                              T1
-                              <span>
-                                <img src="images/100px-T1_2019_allmode.png" alt="">
-                              </span>                          
-                            </td>
-                            <td class="sersus">
-                              <p>vs</p>
-                              <p>(Bo3)</p>
-                            </td>
-                            <td class="team-right">
-                              <span>
-                                <img src="images/45px-Alliance_2016_allmode.png" alt="">
-                              </span>                           
-                              [A]
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="match-filler" colspan="3">
-                              <span class="time-countdown">3h35m00s</span>
-                              <span class="name">
-                                The International 10
-                                <img src="images/TheInternationalSmall.png"alt="">
-                              </span>
-                            </td>                       
-                          </tr>
-                        </tbody>
-                      </table>
-                      <table class="table-match">
-                        <tbody>
-                          <tr>
-                            <td class="team-left">
-                              T1
-                              <span>
-                                <img src="images/100px-T1_2019_allmode.png" alt="">
-                              </span>                          
-                            </td>
-                            <td class="sersus">
-                              <p>vs</p>
-                              <p>(Bo3)</p>
-                            </td>
-                            <td class="team-right">
-                              <span>
-                                <img src="images/45px-Alliance_2016_allmode.png" alt="">
-                              </span>                           
-                              [A]
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="match-filler" colspan="3">
-                              <span class="time-countdown">3h35m00s</span>
-                              <span class="name">
-                                The International 10
-                                <img src="images/TheInternationalSmall.png"alt="">
-                              </span>
-                            </td>                       
-                          </tr>
-                        </tbody>
-                      </table>
                     </div>
-                  </div>
-                  <div class="container__col-sm-12 container__col-md-12 container__col-lg-12 container__col-xl-6 container-md-order-1">
-                    <div class="tournament column-items">
-                      <div class="column-items-header">
-                        Tournament
+                    <div
+                      class="container__col-sm-12 container__col-md-12 container__col-lg-12 container__col-xl-6 container-md-order-1"
+                    >
+                      <div class="tournament column-items">
+                        <div class="column-items-header">Tournament</div>
+                        <ul class="tournament-list">
+                          <li>
+                            <span class="tournament-list-heading"
+                              >Upcoming</span
+                            >
+                            <ul class="tournament-list-type-list">
+                              <li>
+                                <a href="#">
+                                  <img
+                                    src="images/TheInternationalSmall.png"
+                                    alt=""
+                                  />
+                                  <span class="tournament-name"
+                                    >ESL Meisterschaft Autumn 2021</span
+                                  >
+                                  <span class="tournament-date"
+                                    >Aug 30 – Nov 21</span
+                                  >
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <img
+                                    src="images/TheInternationalSmall.png"
+                                    alt=""
+                                  />
+                                  <span class="tournament-name"
+                                    >ESL Meisterschaft Autumn 2021</span
+                                  >
+                                  <span class="tournament-date"
+                                    >Aug 30 – Nov 21</span
+                                  >
+                                </a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <span class="tournament-list-heading">Ogoing</span>
+                            <ul class="tournament-list-type-list">
+                              <li>
+                                <a href="#">
+                                  <img
+                                    src="images/TheInternationalSmall.png"
+                                    alt=""
+                                  />
+                                  <span class="tournament-name"
+                                    >ESL Meisterschaft Autumn 2021</span
+                                  >
+                                  <span class="tournament-date"
+                                    >Aug 30 – Nov 21</span
+                                  >
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <img
+                                    src="images/TheInternationalSmall.png"
+                                    alt=""
+                                  />
+                                  <span class="tournament-name"
+                                    >ESL Meisterschaft Autumn 2021</span
+                                  >
+                                  <span class="tournament-date"
+                                    >Aug 30 – Nov 21</span
+                                  >
+                                </a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <span class="tournament-list-heading"
+                              >Completed</span
+                            >
+                            <ul class="tournament-list-type-list">
+                              <li>
+                                <a href="#">
+                                  <img
+                                    src="images/TheInternationalSmall.png"
+                                    alt=""
+                                  />
+                                  <span class="tournament-name"
+                                    >ESL Meisterschaft Autumn 2021</span
+                                  >
+                                  <span class="tournament-date"
+                                    >Aug 30 – Nov 21</span
+                                  >
+                                </a>
+                              </li>
+                              <li>
+                                <a href="#">
+                                  <img
+                                    src="images/TheInternationalSmall.png"
+                                    alt=""
+                                  />
+                                  <span class="tournament-name"
+                                    >ESL Meisterschaft Autumn 2021</span
+                                  >
+                                  <span class="tournament-date"
+                                    >Aug 30 – Nov 21</span
+                                  >
+                                </a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
                       </div>
-                      <ul class="tournament-list">
-                        <li>
-                          <span class="tournament-list-heading">Upcoming</span>
-                          <ul class="tournament-list-type-list">
-                            <li>
-                              <a href="#">
-                                <img src="images/TheInternationalSmall.png" alt="">
-                                <span class="tournament-name">ESL Meisterschaft Autumn 2021</span>
-                                <span class="tournament-date">Aug 30 – Nov 21</span>
-                              </a>
-                            </li>
-                            <li>
-                              <a href="#">
-                                <img src="images/TheInternationalSmall.png" alt="">
-                                <span class="tournament-name">ESL Meisterschaft Autumn 2021</span>
-                                <span class="tournament-date">Aug 30 – Nov 21</span>
-                              </a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li>
-                          <span class="tournament-list-heading">Ogoing</span>
-                          <ul class="tournament-list-type-list">
-                            <li>
-                              <a href="#">
-                                <img src="images/TheInternationalSmall.png" alt="">
-                                <span class="tournament-name">ESL Meisterschaft Autumn 2021</span>
-                                <span class="tournament-date">Aug 30 – Nov 21</span>
-                              </a>
-                            </li>
-                            <li>
-                              <a href="#">
-                                <img src="images/TheInternationalSmall.png" alt="">
-                                <span class="tournament-name">ESL Meisterschaft Autumn 2021</span>
-                                <span class="tournament-date">Aug 30 – Nov 21</span>
-                              </a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li>
-                          <span class="tournament-list-heading">Completed</span>
-                          <ul class="tournament-list-type-list">
-                            <li>
-                              <a href="#">
-                                <img src="images/TheInternationalSmall.png" alt="">
-                                <span class="tournament-name">ESL Meisterschaft Autumn 2021</span>
-                                <span class="tournament-date">Aug 30 – Nov 21</span>
-                              </a>
-                            </li>
-                            <li>
-                              <a href="#">
-                                <img src="images/TheInternationalSmall.png" alt="">
-                                <span class="tournament-name">ESL Meisterschaft Autumn 2021</span>
-                                <span class="tournament-date">Aug 30 – Nov 21</span>
-                              </a>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
                     </div>
                   </div>
                 </div>
@@ -566,9 +714,8 @@
           </div>
         </div>
       </div>
-    </div> 
-  </div>
-   
-  <div class="footer"></div>
-</body>
+    </div>
+
+    <div class="footer"></div>
+  </body>
 </html>
