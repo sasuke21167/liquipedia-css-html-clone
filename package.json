@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://sasuke21167.github.io/liquipedia-css-html-clone/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
