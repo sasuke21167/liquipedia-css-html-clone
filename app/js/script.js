@@ -8,8 +8,8 @@ const shareDrop = document.querySelector(".share-drop");
 const menuDrop = document.querySelector(".menu-drop");
 
 const arrayShow = [
-  brandMenu,
   navItem,
+  brandMenu,
   trending,
   tournament,
   contribute,
