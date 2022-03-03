@@ -63,10 +63,6 @@ Object.keys(dropToggle).forEach(function (i) {
   });
 });
 
-const isVisible = (elem) =>
-  !!elem &&
-  !!(elem.offsetWidth || elem.offsetHeight || elem.getClientRects().length);
-
 function hideOnClickOutside(element1, element2) {
   const outsideClickListener = (event) => {
     if (!element1.contains(event.target) && !element2.contains(event.target)) {
