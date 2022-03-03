@@ -56,19 +56,39 @@ const toggleElement = (i) => {
 };
 
 //add event
-document.onclick = myFunction;
-
-function myFunction(e) {
-  console.log(e.target);
-  if (e.target.id !== "drop-toggle" && e.target.id !== "element") {
-    arrayShow.forEach((element) => {
-      element.classList.remove("show");
-    });
-  }
-}
 
 Object.keys(dropToggle).forEach(function (i) {
   dropToggle[i].addEventListener("click", function () {
     toggleElement(i);
   });
 });
+
+const isVisible = (elem) =>
+  !!elem &&
+  !!(elem.offsetWidth || elem.offsetHeight || elem.getClientRects().length);
+
+function hideOnClickOutside(element1, element2) {
+  const outsideClickListener = (event) => {
+    if (!element1.contains(event.target) && !element2.contains(event.target)) {
+      // or use: event.target.closest(selector) === null
+      if (element1 == dropToggle[0]) {
+        arrayShow[0].classList.remove("show");
+      }
+      element2.classList.remove("show");
+      removeClickListener();
+    }
+  };
+
+  const removeClickListener = () => {
+    document.removeEventListener("click", outsideClickListener);
+  };
+
+  document.addEventListener("click", outsideClickListener);
+}
+
+for (let j = 0; j < dropToggle.length; j++) {
+  dropToggle[j].addEventListener("click", function () {
+    let a = j + 1;
+    hideOnClickOutside(dropToggle[j], arrayShow[a]);
+  });
+}
